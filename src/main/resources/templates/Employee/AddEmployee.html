@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<div id="wrapperH1">
+    <h1 id="h1"> Nordic Motorhome Rental</h1>
+</div>
+
+<body background="/background.jpg">
+<ul>
+    <li><img src="/NMRfamilylogowhite.png" width="100px" height="50px"></li>
+    <li><a href="/" accesskey="h">Home</a> </li>
+    <li><a href="/Customer" accesskey="c">Customer</a></li>
+    <li><a href="/MotorHome" accesskey="m">Motor homes</a></li>
+    <li><a href="/Contract" accesskey="t">Contracts</a></li>
+    <li><a href="/Repair" accesskey="r">Repairs</a></li>
+    <li><a class="active" href="/Employee" accesskey="e">Employees</a> </li>
+</ul>
+
+<table id="tableMid" >
+<form action="/AddEmployee" method="post">
+    <label style="font-size: 20px"> Enter title here </label>
+    <input type="text" name="title" placeholder="Title" style="position: relative; left: 4px">
+    <br/>
+    <label style="font-size: 20px"> Enter name here</label>
+    <input type="text" name="name" placeholder="Name">
+    <br/>
+    <label style="font-size: 20px"> Enter address here </label>
+    <input type="text" name="address" placeholder="Address" style="position: relative; left: 4px">
+    <br/>
+    <label style="font-size: 20px"> Enter zip code here</label>
+    <input type="text" name="zipCode" placeholder="Zip code">
+    <br/>
+    <label style="font-size: 20px"> Enter personal number here</label>
+    <input type="text" name="CPR" placeholder="Personal number">
+    <br/>
+    <br/>
+    <input type="submit" value="Add new employee" onclick="alert('You have successfully added an new employee')">
+</form>
+</table>
+</body>
+</html>

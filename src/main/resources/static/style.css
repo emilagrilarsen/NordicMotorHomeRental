@@ -1,0 +1,84 @@
+body{
+    background: url("NMRfamilylogo.png") no-repeat 50% 200%, url("background.jpg") no-repeat;
+    background-size: 30%, 100%;
+
+}
+h1{
+    color: white;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 55px;
+    text-decoration: none;
+}
+li a:hover:not(.active) {
+    background-color: #111;
+}
+.active{
+    background-color: green;
+}
+
+li img{
+    color: white;
+}
+#WrapperTilMenu{
+    width: 1100px;
+    height: 500px;
+    border: 2px solid cornflowerblue;
+    padding: 5px;
+    position: relative;
+    left: 5%;
+    background-color: lightcyan;
+}
+table{
+    border-collapse: collapse;
+    width: 50%;
+}
+#tableMid{
+    position: relative;
+    left: 25%;
+    width: 50%;
+}
+th{
+    background-color: lightgray;
+    text-align: center;
+
+}
+td, th{
+    border: 1px solid lightcyan;
+    text-align: left;
+    padding: 3px
+}
+tr:nth-child(even) {
+    background-color: grey;
+}
+.btn {
+    border: 1px solid lightblue;
+    text-align: center;
+    padding: 5px;
+}
+#table2{
+    border-collapse: collapse;
+    width: 50%;
+    display: inline-block;
+    float: left;
+}
+#table3{
+    border-collapse: collapse;
+    width: 50%;
+    display: inline-block;
+    float: right;
+}

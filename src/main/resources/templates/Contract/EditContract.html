@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit contract</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<div id="wrapperH1">
+    <h1 id="h1"> Nordic Motorhome Rental</h1>
+</div>
+
+<body background="/background.jpg">
+
+<ul>
+    <li><img src="/NMRfamilylogowhite.png" width="100px" height="50px"/></li>
+    <li><a href="/" accesskey="h">Home</a> </li>
+    <li><a href="/Customer" accesskey="c">Customer</a></li>
+    <li><a href="/MotorHome" accesskey="m">Motor homes</a></li>
+    <li><a class="active" href="/Contract" accesskey="t">Contracts</a></li>
+    <li><a href="/Repair" accesskey="r">Repairs</a></li>
+    <li><a href="/Employee" accesskey="e">Employees</a> </li>
+</ul>
+
+<form action="/EditContract" method="post">
+    <table>
+        <th colspan="2">Update the information below</th>
+
+        <tr>
+            <td><label>Employee ID</label></td>
+            <td><input type="text" name="employeeID" th:value="${contract.employeeID}" /></td>
+        </tr>
+
+        <tr>
+            <td><label>Customer ID</label></td>
+            <td><input type="text" name="customerID" th:value="${contract.customerID}"/></td>
+        </tr>
+
+        <tr>
+            <td><label>Motor home ID</label></td>
+            <td><input type="text" name="motorHomeID" th:value="${contract.motorHomeID}" readonly/></td>
+        </tr>
+
+        <tr>
+            <td><label>Enter extra equipment</label></td>
+            <td><input type="text" name="extraEquipment" th:value="${contract.extraEquipment}"/></td>
+        </tr>
+
+        <tr>
+            <td><label>Enter pick up</label></td>
+            <td><input type="text" name="pickUpKM" th:value="${contract.pickUp}"/></td>
+        </tr>
+
+        <tr>
+            <td><label>Enter drop off</label></td>
+            <td><input type="text" name="dropOffKM" th:value="${contract.dropOff}"/></td>
+        </tr>
+
+        <tr>
+            <td><label style="font-size: 20px"> Enter start date</label></td>
+            <td> <input type="Date" pattern="yyyy-MM-dd" name="startDate" th:value="contract.startDate"></td>
+        </tr>
+
+        <tr>
+            <td><label style="font-size: 20px"> Enter end date</label></td>
+            <td><input type="Date" pattern="yyyy-MM-dd" name="endDate" th:value="contract.endDate"></td>
+        </tr>
+
+
+    </table>
+    <input style="position: relative; left: 47.5%" type="submit" value="Update contract" onclick="alert('You have successfully updated the contract!')"/>
+</form>
+
+</body>
+</html>

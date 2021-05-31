@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Motorhome</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<div id="wrapperH1">
+  <h1 id="h1"> Nordic Motorhome Rental</h1>
+</div>
+
+<body background="/background.jpg">
+<ul>
+  <li><img src="/NMRfamilylogowhite.png" width="100px" height="50px"></li>
+  <li><a href="/" accesskey="h">Home</a> </li>
+  <li><a href="/Customer" accesskey="c">Customer</a></li>
+  <li><a class="active" href="/MotorHome" accesskey="m">Motor homes</a></li>
+  <li><a href="/Contract" accesskey="t">Contracts</a></li>
+  <li><a href="/Repair" accesskey="r">Repairs</a></li>
+  <li><a href="/Employee" accesskey="e">Employees</a> </li>
+</ul>
+
+<table id="tableMid" >
+<form action="/EditMotorHome" method="post">
+  <table>
+    <th colspan="2">Update the information below</th>
+
+    <tr>
+      <td><label>Motor home ID</label></td>
+      <td><input type="text" name="motorHomeID" th:value="${motorhome.motorHomeID}" readonly/></td>
+    </tr>
+
+    <tr>
+      <td> <label> Repair ID</label></td>
+      <td> <input type="text" name="repairID" th:value="${motorhome.repairID}" readonly></td>
+    </tr>
+
+    <tr>
+      <td><label>Enter brand</label></td>
+      <td><input type="text" name="brand" th:value="${motorhome.brand}"/></td>
+    </tr>
+
+    <tr>
+      <td><label>Enter model</label></td>
+      <td><input type="text" name="model" th:value="${motorhome.model}"/></td>
+    </tr>
+
+    <tr>
+      <td><label>Enter driven kilometers</label></td>
+      <td><input type="text" name="drivenKM" th:value="${motorhome.drivenKM}"/></td>
+    </tr>
+
+    <tr>
+      <td><label>Enter bed count</label></td>
+      <td><input type="text" name="bedCount" th:value="${motorhome.bedCount}"/></td>
+    </tr>
+
+    <tr>
+      <td><label>Enter price per day</label></td>
+      <td><input type="text" name="pricePerDay" th:value="${motorhome.pricePerDay}"/></td>
+    </tr>
+
+  </table>
+  <input style="position: relative; left: 47.5%" type="submit" value="Update motor home" onclick="alert('You have successfully updated the motor home!')"/>
+</form>
+</table>
+
+</body>
+</html>

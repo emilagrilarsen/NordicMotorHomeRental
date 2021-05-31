@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add motorhome</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<div id="wrapperH1">
+    <h1 id="h1"> Nordic Motorhome Rental</h1>
+</div>
+
+<body background="/background.jpg">
+<ul>
+    <li><img src="/NMRfamilylogowhite.png" width="100px" height="50px"></li>
+    <li><a href="/" accesskey="h">Home</a> </li>
+    <li><a href="/Customer" accesskey="c">Customer</a></li>
+    <li><a class="active" href="/MotorHome" accesskey="m">Motor homes</a></li>
+    <li><a href="/Contract" accesskey="t">Contracts</a></li>
+    <li><a href="/Repair" accesskey="r">Repairs</a></li>
+    <li><a href="/Employee" accesskey="e">Employees</a> </li>
+</ul>
+
+<table id="tableMid" >
+<form action="/AddMotorHome" method="post">
+    <label style="font-size: 20px"> Enter repairID here</label>
+    <input type="text" name="repairID" placeholder="Repair ID">
+    <br/>
+    <label style="font-size: 20px"> Enter brand here</label>
+    <input type="text" name="brand" placeholder="Brand">
+    <br/>
+    <label style="font-size: 20px"> Enter model here </label>
+    <input type="text" name="model" placeholder="model" style="position: relative; left: 4px">
+    <br/>
+    <label style="font-size: 20px"> Enter KM driven here</label>
+    <input type="text" name="drivenKM" placeholder="KM driven">
+    <br/>
+    <label style="font-size: 20px"> Enter number of beds here</label>
+    <input type="text" name="bedCount" placeholder="Number of beds">
+    <br/>
+    <label style="font-size: 20px"> Enter price per day here</label>
+    <input type="text" name="pricePerDay" placeholder="Price per day">
+    <br/>
+    <br/>
+    <input type="submit" value="Add new motorhome" onclick="alert('You have successfully added a new motor home!')">
+</form>
+</table>
+</body>
+</html>

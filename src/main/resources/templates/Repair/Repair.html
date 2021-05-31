@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Repair</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<div id="wrapperH1">
+    <h1 id="h1"> Nordic Motorhome Rental</h1>
+</div>
+
+<body background="/background.jpg">
+<ul>
+    <li><img src="/NMRfamilylogowhite.png" width="100px" height="50px"></li>
+    <li><a href="/" accesskey="h">Home</a> </li>
+    <li><a href="/Customer" accesskey="c">Customer</a></li>
+    <li><a href="/MotorHome" accesskey="m">Motor homes</a></li>
+    <li><a href="/Contract" accesskey="t">Contracts</a></li>
+    <li><a class="active" href="/Repair" accesskey="r">Repairs</a></li>
+    <li><a href="/Employee" accesskey="e">Employees</a> </li>
+</ul>
+
+<h1>List of motor homes</h1>
+    <table id="table2">
+        <thead>
+        <tr>
+            <th> Motorhome ID </th>
+            <th> Repair ID </th>
+            <th> Brand </th>
+            <th> Model </th>
+            <th> KM driven </th>
+            <th> Number of beds </th>
+            <th> Buttons </th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="MotorHome: ${MotorHomes}" >
+
+        <td th:text="${MotorHome.motorHomeID}"></td>
+        <td th:text="${MotorHome.repairID}"></td>
+        <td th:text="${MotorHome.brand}"></td>
+        <td th:text="${MotorHome.model}"></td>
+        <td th:text="${MotorHome.drivenKM}"></td>
+        <td th:text="${MotorHome.bedCount}"></td>
+
+
+            <td>
+                <a th:href="@{'/MakeRepair/'+${MotorHome.motorHomeID}}">
+                    <button class="btn"> Make repair note </button>
+                </a>
+
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+<table id="table3" style="width: 50%">
+    <thead>
+    <tr>
+        <th> Repair ID </th>
+        <th> Note </th>
+        <th> Price </th>
+        <th> Fuel level</th>
+        <th> Button </th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+        <tr th:each="Repairs: ${repair}">
+
+            <td th:text="${Repairs.repairID}"></td>
+            <td th:text="${Repairs.note}"></td>
+            <td th:text="${Repairs.price}"></td>
+            <td th:text="${Repairs.fuelLevelLow}"></td>
+
+            <td>
+                <a th:href="@{'/deleteRepair/'+${Repairs.repairID}}">
+                    <button class="btn"> Delete repair note </button>
+                </a>
+
+                <a th:href="@{'/EditRepair/'+${Repairs.repairID}}">
+                    <button class="btn"> Edit repair note</button>
+                </a>
+
+            </td>
+
+    </tbody>
+
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Motorhome</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<div id="wrapperH1">
+    <h1 id="h1"> Nordic Motorhome Rental</h1>
+</div>
+
+<body>
+<ul>
+    <li><img src="/NMRfamilylogowhite.png" width="100px" height="50px"></li>
+    <li><a href="/" accesskey="h">Home</a> </li>
+    <li><a href="/Customer" accesskey="c">Customer</a></li>
+    <li><a class="active" href="/MotorHome" accesskey="m">Motor homes</a></li>
+    <li><a href="/Contract" accesskey="t">Contracts</a></li>
+    <li><a href="/Repair" accesskey="r">Repairs</a></li>
+    <li><a href="/Employee" accesskey="e">Employees</a> </li>
+</ul>
+<h1>List of motor homes</h1>
+<table id="tableMid">
+    <thead>
+    <tr>
+        <th> Motorhome ID </th>
+        <th> Repair ID </th>
+        <th> Brand </th>
+        <th> Model </th>
+        <th> KM driven </th>
+        <th> Number of beds </th>
+        <th> Price per day </th>
+        <th> Buttons </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="motorhome: ${MotorHomes}">
+        <td th:text="${motorhome.motorHomeID}"></td>
+        <td th:text="${motorhome.repairID}"></td>
+        <td th:text="${motorhome.brand}"></td>
+        <td th:text="${motorhome.model}"></td>
+        <td th:text="${motorhome.drivenKM}"></td>
+        <td th:text="${motorhome.bedCount}"></td>
+        <td th:text="${motorhome.pricePerDay}"></td>
+
+        <td>
+            <a th:href="@{'/deleteMotorHome/'+${motorhome.motorHomeID}}">
+                <button class="btn"> Delete motorhome </button>
+            </a>
+
+            <a th:href="@{'/EditMotorHome/'+${motorhome.motorHomeID}}">
+                <button class="btn"> Edit motorhome</button>
+            </a>
+
+            <a th:href="@{'/AddContract/'+${motorhome.motorHomeID}}">
+                <button class="btn">Create contract</button>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="/AddMotorHome" method="get">
+    <button class="btn-create" id="btn-create" style="position: relative; left: 25%">Add new motorhome</button>
+</form>
+
+
+
+</body>
+</html>

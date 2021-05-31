@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Contracts</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<div id="wrapperH1">
+    <h1 id="h1"> Nordic Motorhome Rental</h1>
+</div>
+
+<body>
+<ul>
+    <li><img src="/NMRfamilylogowhite.png" width="100px" height="50px"></li>
+    <li><a href="/" accesskey="h">Home</a> </li>
+    <li><a href="/Customer" accesskey="c">Customer</a></li>
+    <li><a href="/MotorHome" accesskey="m">Motor homes</a></li>
+    <li><a class="active" href="/Contract" accesskey="t">Contracts</a></li>
+    <li><a href="/Repair" accesskey="r">Repairs</a></li>
+    <li><a href="/Employee" accesskey="e">Employees</a> </li>
+</ul>
+<h1>List of contracts</h1>
+
+<table id="tableMid">
+    <thead>
+    <tr>
+        <th> Contract ID </th>
+        <th> Employee ID </th>
+        <th> Customer ID </th>
+        <th> Motor home ID </th>
+        <th> Extra equipment </th>
+        <th> Pick up location </th>
+        <th> Drop off location </th>
+        <th> Start date </th>
+        <th> End date</th>
+        <th> Total price</th>
+        <th> True for canceled</th>
+        <th> Buttons </th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr th:each="contract: ${Contracts}">
+
+        <td th:text="${contract.contractID}"></td>
+        <td th:text="${contract.employeeID}"></td>
+        <td th:text="${contract.customerID}"></td>
+        <td th:text="${contract.motorHomeID}"></td>
+        <td th:text="${contract.extraEquipment}"></td>
+        <td th:text="${contract.pickUpKM}"></td>
+        <td th:text="${contract.dropOffKM}"></td>
+        <td th:text="${contract.startDate}"></td>
+        <td th:text="${contract.endDate}"></td>
+        <td th:text="${contract.totalPrice}"></td>
+
+        <td>
+            <a th:href="@{'/EditContract/'+${contract.contractID}}">
+                <button class="btn"> Edit contract</button>
+            </a>
+            <a th:href="@{'/deleteContract/'+${contract.contractID}}">
+                <button class="btn"> Delete contract </button>
+            </a>
+            <a th:href="@{'/cancelContract/'+${contract.contractID}}">
+                <button class="btn" onclick="alert('You have successfully canceled the contract!\n' +
+                    'The contract will still be visible, but it is canceled.')"> Cancel contract </button>
+            </a>
+
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>

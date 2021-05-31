@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<div id="wrapperH1">
+    <h1 id="h1"> Nordic Motorhome Rental</h1>
+</div>
+
+<body>
+<ul>
+    <li><img src="/NMRfamilylogowhite.png" width="100px" height="50px"></li>
+    <li><a href="/" accesskey="h">Home</a> </li>
+    <li><a class="active" href="/Customer" accesskey="c">Customer</a></li>
+    <li><a href="/MotorHome" accesskey="m">Motor homes</a></li>
+    <li><a href="/Contract" accesskey="t">Contracts</a></li>
+    <li><a href="/Repair" accesskey="r">Repairs</a></li>
+    <li><a href="/Employee" accesskey="e">Employees</a> </li>
+</ul>
+
+<h1>List of customers</h1>
+<table id="tableMid">
+    <thead>
+    <tr>
+        <th> Customer ID </th>
+        <th> Name </th>
+        <th> Address </th>
+        <th> Zip code </th>
+        <th> Drivers license </th>
+        <th> Buttons </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="customer: ${Customers}">
+        <td th:text="${customer.customerID}"></td>
+        <td th:text="${customer.name}"></td>
+        <td th:text="${customer.address}"></td>
+        <td th:text="${customer.zipCode}"></td>
+        <td th:text="${customer.driversLicense}"></td>
+
+        <td>
+            <a th:href="@{'/deleteCustomer/'+${customer.customerID}}">
+                <button class="btn"> Delete customer </button>
+            </a>
+
+            <a th:href="@{'/EditCustomer/'+${customer.customerID}}">
+                <button class="btn"> Edit customer</button>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="/AddCustomer" method="get">
+    <button class="btn-create" id="btn-create" style="position: relative; left: 25%">Add new customer</button>
+</form>
+
+</body>
+</html>

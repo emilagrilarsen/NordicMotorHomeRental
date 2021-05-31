@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit repair</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<div id="wrapperH1">
+  <h1 id="h1"> Nordic Motorhome Rental</h1>
+</div>
+
+<body background="/background.jpg">
+<ul>
+  <li><img src="/NMRfamilylogowhite.png" width="100px" height="50px"></li>
+  <li><a href="/" accesskey="h">Home</a> </li>
+  <li><a href="/Customer" accesskey="c">Customer</a></li>
+  <li><a href="/MotorHome" accesskey="m">Motor homes</a></li>
+  <li><a href="/Contract" accesskey="t">Contracts</a></li>
+  <li><a class="active" href="/Repair" accesskey="r">Repairs</a></li>
+  <li><a href="/Employee" accesskey="e">Employees</a> </li>
+</ul>
+
+<table id="tableMid" >
+<form th:action="@{'/EditRepair/'+${Repairs.repairID}}" method="post">
+  <table>
+    <th colspan="2">Update the information below</th>
+
+    <tr>
+      <td><label>Note/Description</label></td>
+      <td><input type="text" name="note" th:value="${Repairs.note}"/></td>
+    </tr>
+
+    <tr>
+      <td> <label>Price</label></td>
+      <td> <input type="text" name="price" th:value="${Repairs.price}"></td>
+    </tr>
+
+
+
+  </table>
+  <input style="position: relative; left: 47.5%" type="submit" value="Update repair note" onclick="alert('You have successfully updated the note!')"/>
+</form>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<div id="wrapperH1">
+    <h1 id="h1"> Nordic Motorhome Rental</h1>
+</div>
+
+<body>
+<ul>
+    <li><img src="/NMRfamilylogowhite.png" width="100px" height="50px"></li>
+    <li><a href="/" accesskey="h">Home</a> </li>
+    <li><a href="/Customer" accesskey="c">Customer</a></li>
+    <li><a href="/MotorHome" accesskey="m">Motor homes</a></li>
+    <li><a href="/Contract" accesskey="t">Contracts</a></li>
+    <li><a href="/Repair" accesskey="r">Repairs</a></li>
+    <li><a class="active" href="/Employee" accesskey="e">Employees</a> </li>
+</ul>
+<h1>List of employees</h1>
+<table id="tableMid">
+    <thead>
+    <tr>
+        <th> Employee ID </th>
+        <th> Title </th>
+        <th> Name </th>
+        <th> Address </th>
+        <th> Zip code </th>
+        <th> Personal number </th>
+        <th> Buttons </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="employee: ${Employees}">
+        <td th:text="${employee.employeeID}"></td>
+        <td th:text="${employee.title}"></td>
+        <td th:text="${employee.name}"></td>
+        <td th:text="${employee.address}"></td>
+        <td th:text="${employee.zipCode}"></td>
+        <td th:text="${employee.CPR}"></td>
+
+        <td>
+            <a th:href="@{'/deleteEmployee/'+${employee.employeeID}}">
+                <button class="btn"> Delete employee </button>
+            </a>
+
+            <a th:href="@{'/EditEmployee/'+${employee.employeeID}}">
+                <button class="btn"> Edit employee</button>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="/AddEmployee" method="get">
+    <button class="btn-create" id="btn-create" style="position: relative; left: 25%">Add new employee</button>
+</form>
+
+</body>
+</html>
