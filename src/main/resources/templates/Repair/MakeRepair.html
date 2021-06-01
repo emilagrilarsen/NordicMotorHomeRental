@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Repair</title>
+    <title>Add Repair</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <div id="wrapperH1">
@@ -22,30 +22,32 @@
 
 <h1>Write a repair note</h1>
 
-<table id="tableMid" >
 <form th:action="@{'/MakeRepair/'+${motorhome.motorHomeID}}" method="post" >
-    <label style="font-size: 20px">Fill in the note</label>
-    <br/>
-    <textarea type="text" name="note" placeholder="Description" rows="4" cols="50"></textarea>
-    <br/>
+<table id="tableMid" >
 
+    <tr>
+        <td><label style="font-size: 20px">Fill in the note</label></td>
+        <td><textarea type="text" name="note" placeholder="Description" rows="4" cols="50"></textarea></td>
+    </tr>
 
-    <label style="font-size: 20px"> Is the fuel level under 50%?</label>
-    <input type="checkbox" name="fuelLevelLow" value="1"> <label>yes</label>
-    <input type="checkbox" name="fuelLevelLow" value="0"> <label>no</label>
+    <tr>
+        <td><label style="font-size: 20px"> Is the fuel level under 50%?</label></td>
+        <td><input type="radio" name="fuelLevelLow" value="1"> <label>yes</label>
+            <input type="radio" name="fuelLevelLow" value="0"> <label>no</label></td>
+    </tr>
 
+    <tr>
+        <td><label style="font-size: 20px"> Enter the extra KM that have been driven </label></td>
+        <td><input type="text" name="extraKM" placeholder="Ex. 1000"></td>
+    </tr>
 
-    <br/>
-    <label style="font-size: 20px"> Enter the extra KM that have been driven </label>
-    <input type="text" name="extraKM" placeholder="Ex. 1000" style="position: relative; left: 4px">
-    <br/>
-    <label style="font-size: 20px"> Enter the cost </label>
-    <input type="text" name="repairPrice" placeholder="Ex. 1000" style="position: relative; left: 4px"> <label>euro</label>
-    <br/>
-    <br/>
-    <input type="submit" value="Add note to motor home" onclick="alert('You have successfully added a new note!')">
-</form>
+    <tr>
+        <td><label style="font-size: 20px"> Enter the cost </label>
+        <td><input type="text" name="repairPrice" placeholder="Ex. 200"> <label>euro</label></td>
+    </tr>
+
 </table>
-
+    <input type="submit" style="position: relative; left:25%" value="Add note to motor home" onclick="alert('You have successfully added a new note!')">
+</form>
 </body>
 </html>

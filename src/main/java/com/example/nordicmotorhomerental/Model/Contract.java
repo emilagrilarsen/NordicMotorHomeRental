@@ -155,17 +155,21 @@ public class Contract implements Price{
         long noOfDays = ChronoUnit.DAYS.between(getStartDate(), getEndDate());
 
         if (getSeason() == 0) {
-            sum = (m * noOfDays) + getPrice() + getExtraEquipment();
+            sum = (m * noOfDays) + getPrice() + (getExtraEquipment() * 40);
             sum = Math.round(sum * 100.0);
             sum = sum / 100;
             return sum;
         } else if (getSeason() == 1) {
-            sum = ((m * 1.3) * noOfDays) + getPrice() + getExtraEquipment();
+            sum = ((m * 1.3) * noOfDays) + getPrice() + (getExtraEquipment() * 40);
             sum = (double) Math.round((sum * 100.0));
+            System.out.println(m);
+            System.out.println(noOfDays);
+            System.out.println(getPrice());
+            System.out.println(getExtraEquipment());
             sum = sum / 100;
             return sum;
         } else if (getSeason() == 2){
-            sum = ((m * 1.6) * noOfDays) + getPrice() + getExtraEquipment();
+            sum = ((m * 1.6) * noOfDays) + getPrice() + (getExtraEquipment() * 40);
             sum = (double) Math.round((sum * 100.0));
             sum = sum / 100;
         return sum;
@@ -178,8 +182,6 @@ public class Contract implements Price{
         LocalDate today = LocalDate.now();
         long noOfDays = ChronoUnit.DAYS.between(today, getStartDate());
 
-        System.out.println(getStartDate());
-        System.out.println(isCancel());
         if(isCancel() == true && noOfDays >= 50){
             canceledContractPrice = canceledContractPrice * 0.2;
             if(canceledContractPrice < 200){
@@ -191,19 +193,19 @@ public class Contract implements Price{
         }else if(isCancel() == true && noOfDays <= 49 && noOfDays >= 15){
             canceledContractPrice = canceledContractPrice * 0.5;
             canceledContractPrice = Math.round((canceledContractPrice * 100.0));
-            canceledContractPrice = canceledContractPrice /100;
+            canceledContractPrice = canceledContractPrice / 100;
             return canceledContractPrice;
 
         }else if(isCancel() == true && noOfDays < 15 && noOfDays > 0){
             canceledContractPrice = canceledContractPrice * 0.8;
             canceledContractPrice = (double) Math.round((canceledContractPrice * 100.0));
-            canceledContractPrice = canceledContractPrice /100;
+            canceledContractPrice = canceledContractPrice / 100;
             return canceledContractPrice;
 
         }else if(isCancel() == true && noOfDays == 0){
             canceledContractPrice = canceledContractPrice * 0.95;
             canceledContractPrice = (double) Math.round((canceledContractPrice * 100.0));
-            canceledContractPrice = canceledContractPrice /100;
+            canceledContractPrice = canceledContractPrice / 100;
             return canceledContractPrice;
         }
 

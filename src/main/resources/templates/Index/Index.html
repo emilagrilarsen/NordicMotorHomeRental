@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>virker?</title>
+    <title>Nordic MotorHome Rental</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
 
 </head>
-    <div id="wrapperH1">
-        <h1 id="h1"> Welcome to Nordic Motor home Rental</h1>
-    </div>
+<div id="wrapperH1">
+    <h1 id="h1"> Welcome to Nordic Motor home Rental</h1>
+</div>
 
 
 
@@ -27,21 +27,53 @@
 <br/>
 
 <div id="WrapperTilMenu" class="split">
-    <a href="http://localhost:4041/Customer">
-        <img src="customer.jpg" width="200px" height="100px">
+    <a href="/Customer">
+        <img src="customer.jpg" width="200px" height="100">
     </a>
+
     <form action="/Customer" method="get">
         <input class="btn" type="submit" value="For customer menu click here">
     </form>
 
-    <a href="http://localhost:4041/Employee">
+
+    <div id="WrapperTilMotorhome">
+        <a href="/MotorHome">
+            <img src="MotorHome.png" width="200px" height="100px">
+        </a>
+        <form action="/MotorHome" method="get">
+            <input class="btn" type="submit" value="For motor home menu click here">
+        </form>
+    </div>
+
+
+    <a href="/Employee">
         <img src="Employee.png" width="200px" height="100px">
     </a>
     <form action="/Employee" >
-    <input class="btn" type="submit" value="For employee menu click here">
+        <input class="btn" type="submit" value="For employee menu click here">
+    </form>
+
+
+    <div id="WrapperTilRepair">
+        <a href="/Repair">
+            <img src="/repair.png" width="200px" height="100px">
+        </a>
+        <form action="/Repair" method="get">
+            <input class="btn" type="submit" value="For repair menu click here">
+        </form>
+    </div>
+
+
+    <a href="/Contract" style="float: right">
+        <img src="/Contract.png" width="200px" height="100px">
+    </a>
+    <form action="/Contract" method="get">
+        <input class ="btn" style="float: right" type="submit" value="For contract menu click here">
     </form>
 
 </div>
+
+
 
 </body>
 </html>

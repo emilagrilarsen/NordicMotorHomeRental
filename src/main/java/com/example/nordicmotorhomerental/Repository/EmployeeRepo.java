@@ -23,7 +23,7 @@ public class EmployeeRepo {
     }
 
     public Employee createEmployee(Employee employee) {
-        String sql = "INSERT INTO employee(title, name, address, city, zipCode, CPR) values(?,  ?, ?, ?, ?)";
+        String sql = "INSERT INTO employee(title, name, address, zipCode, CPR) values(?, ?, ?, ?, ?)";
         template.update(sql, employee.getTitle(), employee.getName(), employee.getAddress(), employee.getZipCode(), employee.getCPR());
         return null;
     }

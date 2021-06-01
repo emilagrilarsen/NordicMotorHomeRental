@@ -29,8 +29,8 @@ public class ContractService {
         return contractRepo.findContractById(id);
     }
 
-    public Contract editContract(int id, Contract contract) {
-        return contractRepo.editContract(id, contract);
+    public Contract editContract(int id, Contract contract, MotorHome motorHome) {
+        return contractRepo.editContract(id, contract, motorHome);
     }
 
     public Contract setCancellationPrice(int id, Contract c){ return contractRepo.setCancellationPrice(id, c);}

@@ -25,7 +25,6 @@
     <thead>
     <tr>
         <th> Motorhome ID </th>
-        <th> Repair ID </th>
         <th> Brand </th>
         <th> Model </th>
         <th> KM driven </th>
@@ -38,7 +37,6 @@
     <tbody>
     <tr th:each="motorhome: ${MotorHomes}">
         <td th:text="${motorhome.motorHomeID}"></td>
-        <td th:text="${motorhome.repairID}"></td>
         <td th:text="${motorhome.brand}"></td>
         <td th:text="${motorhome.model}"></td>
         <td th:text="${motorhome.drivenKM}"></td>

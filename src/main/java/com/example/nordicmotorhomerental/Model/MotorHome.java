@@ -8,7 +8,6 @@ public class MotorHome{
 
     @Id
     private int motorHomeID;
-    private int repairID;
     private String brand;
     private String model;
     private int drivenKM;
@@ -18,25 +17,15 @@ public class MotorHome{
     public MotorHome() {
     }
 
-    public MotorHome(int motorHomeID, int repairID, String brand, String model, int drivenKM, String bedCount, double pricePerDay) {
-        this.motorHomeID = motorHomeID;
-        this.repairID = repairID;
-        this.brand = brand;
-        this.model = model;
-        this.drivenKM = drivenKM;
-        this.bedCount = bedCount;
-        this.pricePerDay = pricePerDay;
-    }
-
     public MotorHome(int motorHomeID, String brand, String model, int drivenKM, String bedCount, double pricePerDay) {
         this.motorHomeID = motorHomeID;
         this.brand = brand;
         this.model = model;
         this.drivenKM = drivenKM;
         this.bedCount = bedCount;
-
         this.pricePerDay = pricePerDay;
     }
+
 
     public int getMotorHomeID() {
         return motorHomeID;
@@ -44,14 +33,6 @@ public class MotorHome{
 
     public void setMotorHomeID(int motorHomeID) {
         this.motorHomeID = motorHomeID;
-    }
-
-    public int getRepairID() {
-        return repairID;
-    }
-
-    public void setRepairID(int repairID) {
-        this.repairID = repairID;
     }
 
     public String getBrand() {

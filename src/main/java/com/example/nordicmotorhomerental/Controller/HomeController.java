@@ -76,9 +76,10 @@ public class HomeController {
         return "/Contract/EditContract";
     }
 
-    @PostMapping("/EditContract")
-    public String editContract(@ModelAttribute Contract contract) {
-        contractService.editContract(contract.getMotorHomeID(), contract);
+    @PostMapping("/EditContract/{motorHomeID}")
+    public String editContract(@ModelAttribute Contract contract, @PathVariable("motorHomeID") int id) {
+        MotorHome motorHome = motorHomeService.findMotorHomeById(id);
+        contractService.editContract(contract.getMotorHomeID(), contract, motorHome);
         return "redirect:/Contract";
     }
 //---------------------------------------Cancel contract starter her ---------------------------------------------------
@@ -286,12 +287,13 @@ public class HomeController {
     }
 
     // Add repair post metode
-    @PostMapping("/MakeRepair/{motorhomeid}")
-    public String createRepair(@ModelAttribute Repair repair, @PathVariable("motorhomeid") int id) {
-        repairService.createRepair(repair);
+    @PostMapping("/MakeRepair/{motorhomeID}")
+    public String createRepair(@ModelAttribute Repair repair, @PathVariable("motorhomeID") int id) {
 
-        MotorHome motorHome = motorHomeService.findMotorHomeById(id);
-        repairService.addRepairToMotorHome(motorHome.getMotorHomeID());
+        repairService.createRepair(id, repair);
+
+        /*MotorHome motorHome = motorHomeService.findMotorHomeById(id);
+        repairService.addRepairToMotorHome(motorHome.getMotorHomeID());*/
         return "redirect:/Repair";
     }
 

@@ -12,8 +12,9 @@ public class Repair implements Price {
     public Repair() {
     }
 
-    public Repair(int repairID, String note, int fuelLevelLow, int extraKM, double repairPrice) {
+    public Repair(int repairID,int motorHomeID, String note, int fuelLevelLow, int extraKM, double repairPrice) {
         this.repairID = repairID;
+        this.motorHomeID = motorHomeID;
         this.note = note;
         this.fuelLevelLow = fuelLevelLow;
         this.extraKM = extraKM;
@@ -27,6 +28,14 @@ public class Repair implements Price {
     public void setRepairID(int repairID) {
         this.repairID = repairID;
 
+    }
+
+    public int getMotorHomeID() {
+        return motorHomeID;
+    }
+
+    public void setMotorHomeID(int motorHomeID) {
+        this.motorHomeID = motorHomeID;
     }
 
     public String getNote() {
@@ -55,23 +64,22 @@ public class Repair implements Price {
 
     public double getRepairPrice() {
 
-        return getPrice();
+        return repairPrice;
     }
 
-    public void setRepairPrice  (double repairPrice) {
+    public void setRepairPrice(double repairPrice) {
         this.repairPrice = repairPrice;
     }
 
-    public double getPrice(){
-        double sum = repairPrice;
-        if(getFuelLevelLow() == 0) {
-            sum += getExtraKM();
-            return sum;
-        }else if(getFuelLevelLow() == 1){
-            sum += getExtraKM() + 70;
+    public double getPrice() {
+        double sum = getRepairPrice();
+        if (getFuelLevelLow() == 1) {
+            sum += (extraKM + 70);
+        } else if(getFuelLevelLow() == 0){
+            sum += extraKM;
             return sum;
         }
-        return sum;
-
+            return sum;
     }
+
 }

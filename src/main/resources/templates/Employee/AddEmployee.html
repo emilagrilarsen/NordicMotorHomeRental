@@ -20,27 +20,40 @@
     <li><a href="/Repair" accesskey="r">Repairs</a></li>
     <li><a class="active" href="/Employee" accesskey="e">Employees</a> </li>
 </ul>
+<h1></h1>
 
-<table id="tableMid" >
 <form action="/AddEmployee" method="post">
-    <label style="font-size: 20px"> Enter title here </label>
-    <input type="text" name="title" placeholder="Title" style="position: relative; left: 4px">
-    <br/>
-    <label style="font-size: 20px"> Enter name here</label>
-    <input type="text" name="name" placeholder="Name">
-    <br/>
-    <label style="font-size: 20px"> Enter address here </label>
-    <input type="text" name="address" placeholder="Address" style="position: relative; left: 4px">
-    <br/>
-    <label style="font-size: 20px"> Enter zip code here</label>
-    <input type="text" name="zipCode" placeholder="Zip code">
-    <br/>
-    <label style="font-size: 20px"> Enter personal number here</label>
-    <input type="text" name="CPR" placeholder="Personal number">
-    <br/>
-    <br/>
-    <input type="submit" value="Add new employee" onclick="alert('You have successfully added an new employee')">
+    <table id="tableMid">
+        <th colspan="2" style="text-align: center">Enter the information on the new employee</th>
+        <tr>
+            <td><label style="font-size: 20px"> Enter title here </label></td>
+            <td><input type="text" name="title" placeholder="Title"></td>
+        </tr>
+
+        <tr>
+            <td><label style="font-size: 20px"> Enter name here</label></td>
+            <td><input type="text" name="name" placeholder="Name"></td>
+        </tr>
+
+        <tr>
+            <td><label style="font-size: 20px"> Enter address here </label></td>
+            <td><input type="text" name="address" placeholder="Address"></td>
+        </tr>
+
+        <tr>
+            <td><label style="font-size: 20px"> Enter zip code here</label></td>
+            <td><input type="text" name="zipCode" placeholder="Zip code"></td>
+        </tr>
+
+        <tr>
+            <td><label style="font-size: 20px"> Enter personal number here</label></td>
+            <td><input type="text" name="CPR" placeholder="Personal number"></td>
+        </tr>
+
+    </table>
+    <input type="submit" style="position: relative; left: 47.5%" value="Add new employee" onclick="alert('You have successfully added an new employee')">
+
 </form>
-</table>
+
 </body>
 </html>

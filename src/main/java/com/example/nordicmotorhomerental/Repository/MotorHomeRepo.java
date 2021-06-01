@@ -23,8 +23,8 @@ public class MotorHomeRepo {
     }
 
     public MotorHome createMotorHome(MotorHome motorHome) {
-        String sql = "INSERT INTO motorhome(repairID, brand, model, drivenKM, bedCount, pricePerDay) values(?, ?, ?, ?, ?, ?)";
-        template.update(sql, motorHome.getRepairID(), motorHome.getBrand(), motorHome.getModel(), motorHome.getDrivenKM(),
+        String sql = "INSERT INTO motorhome(brand, model, drivenKM, bedCount, pricePerDay) values(?, ?, ?, ?, ?)";
+        template.update(sql, motorHome.getBrand(), motorHome.getModel(), motorHome.getDrivenKM(),
                             motorHome.getBedCount(), motorHome.getPricePerDay());
         return null;
     }

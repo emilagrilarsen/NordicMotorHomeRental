@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Add motorhome</title>
+    <title>Add Motorhome</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
 
 </head>
@@ -21,29 +21,39 @@
     <li><a href="/Employee" accesskey="e">Employees</a> </li>
 </ul>
 
-<table id="tableMid" >
+<h1></h1>
 <form action="/AddMotorHome" method="post">
-    <label style="font-size: 20px"> Enter repairID here</label>
-    <input type="text" name="repairID" placeholder="Repair ID">
-    <br/>
-    <label style="font-size: 20px"> Enter brand here</label>
-    <input type="text" name="brand" placeholder="Brand">
-    <br/>
-    <label style="font-size: 20px"> Enter model here </label>
-    <input type="text" name="model" placeholder="model" style="position: relative; left: 4px">
-    <br/>
-    <label style="font-size: 20px"> Enter KM driven here</label>
-    <input type="text" name="drivenKM" placeholder="KM driven">
-    <br/>
-    <label style="font-size: 20px"> Enter number of beds here</label>
-    <input type="text" name="bedCount" placeholder="Number of beds">
-    <br/>
-    <label style="font-size: 20px"> Enter price per day here</label>
-    <input type="text" name="pricePerDay" placeholder="Price per day">
-    <br/>
-    <br/>
-    <input type="submit" value="Add new motorhome" onclick="alert('You have successfully added a new motor home!')">
-</form>
+    <table id="tableMid">
+    <th colspan="2" style="text-align: center">Enter the information on the new motorhome below</th>
+
+    <tr>
+        <td><label style="font-size: 20px"> Enter brand here</label> </td>
+        <td><input type="text" name="brand" placeholder="Brand"> </td>
+    </tr>
+
+    <tr>
+    <td> <label style="font-size: 20px"> Enter model here </label></td>
+    <td> <input type="text" name="model" placeholder="Model"></td>
+    </tr>
+
+    <tr>
+    <td> <label style="font-size: 20px"> Enter KM driven here</label> </td>
+    <td> <input type="text" name="drivenKM" placeholder="KM driven"> </td>
+    </tr>
+
+    <tr>
+    <td> <label style="font-size: 20px"> Enter number of beds here</label> </td>
+    <td> <input type="text" name="bedCount" placeholder="Number of beds"> </td>
+    </tr>
+
+    <tr>
+    <td> <label style="font-size: 20px"> Enter price per day here</label> </td>
+    <td> <input type="text" name="pricePerDay" placeholder="Price per day"> </td>
+    </tr>
+
 </table>
+    <input type="submit" style="position: relative; left: 47.5%" value="Add new motorhome" onclick="alert('You have successfully added a new motor home!')">
+</form>
+
 </body>
 </html>

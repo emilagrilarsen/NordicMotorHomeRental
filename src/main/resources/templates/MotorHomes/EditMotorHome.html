@@ -20,20 +20,16 @@
   <li><a href="/Repair" accesskey="r">Repairs</a></li>
   <li><a href="/Employee" accesskey="e">Employees</a> </li>
 </ul>
+<h1></h1>
 
-<table id="tableMid" >
 <form action="/EditMotorHome" method="post">
-  <table>
+  <table id="tableMid">
+
     <th colspan="2">Update the information below</th>
 
     <tr>
       <td><label>Motor home ID</label></td>
       <td><input type="text" name="motorHomeID" th:value="${motorhome.motorHomeID}" readonly/></td>
-    </tr>
-
-    <tr>
-      <td> <label> Repair ID</label></td>
-      <td> <input type="text" name="repairID" th:value="${motorhome.repairID}" readonly></td>
     </tr>
 
     <tr>

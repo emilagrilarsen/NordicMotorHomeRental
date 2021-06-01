@@ -23,10 +23,10 @@ public class RepairRepo {
         return template.query(sql, rowMapper);
     }
 
-    public Repair createRepair(Repair repair) {
-        String sql = "INSERT INTO repair(note, fuelLevelLow, extraKM, repairPrice) values(?, ?, ?, ?)";
+    public Repair createRepair(int id, Repair repair) {
+        String sql = "INSERT INTO repair(motorHomeID, note, fuelLevelLow, extraKM, repairPrice) values(?, ?, ?, ?, ?)";
 
-        template.update(sql, repair.getNote(), repair.getFuelLevelLow(), repair.getExtraKM(), repair.getRepairPrice());
+        template.update(sql, id, repair.getNote(), repair.getFuelLevelLow(), repair.getExtraKM(), repair.getPrice());
         return null;
     }
 
@@ -45,17 +45,17 @@ public class RepairRepo {
     public Repair editRepair(int id, Repair repair){
         String sql = "UPDATE repair SET note = ?, fuelLevelLow = ?, extraKM = ?, repairPrice = ? WHERE repairID = ?";
 
-        template.update(sql, repair.getNote(), repair.getFuelLevelLow(), repair.getExtraKM(), repair.getRepairPrice(), repair.getRepairID());
+        template.update(sql, repair.getNote(), repair.getFuelLevelLow(), repair.getExtraKM(), repair.getPrice(), repair.getRepairID());
         return null;
     }
 
-    public MotorHome addRepairToMotorHome(int motorHomeID){
-        String sql = "UPDATE motorhome SET motorhome.repairID = (SELECT repair.repairID FROM repair WHERE repairID = " +
-                "(SELECT MAX(repairID) FROM repair)) WHERE motorHomeID = ?";
+    public Repair addRepairToMotorHome(int motorHomeID){
+        String sql = "UPDATE repair SET repair.motorHomeID = ? WHERE repairID = ?";
 
-        template.update(sql,  motorHomeID);
+        template.update(sql, motorHomeID);
         return null;
     }
 
-
+//(SELECT motorhome.motorHomeID FROM motorhome WHERE motorHomeID = " +
+//                "(SELECT MAX(repairID) FROM repair))
 }

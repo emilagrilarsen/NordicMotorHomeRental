@@ -10,13 +10,13 @@ public class Employee {
     private String title;
     private String name;
     private String address;
-    private String zipCode;
+    private int zipCode;
     private String CPR;
 
     public Employee() {
     }
 
-    public Employee(int employeeID, String title, String name, String address, String zipCode, String CPR) {
+    public Employee(int employeeID, String title, String name, String address, int zipCode, String CPR) {
         this.employeeID = employeeID;
         this.title = title;
         this.name = name;
@@ -57,11 +57,11 @@ public class Employee {
         this.address = address;
     }
 
-    public String getZipCode() {
+    public int getZipCode() {
         return zipCode;
     }
 
-    public void setZipCode(String zipCode) {
+    public void setZipCode(int zipCode) {
         this.zipCode = zipCode;
     }
 

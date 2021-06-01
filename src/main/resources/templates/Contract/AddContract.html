@@ -2,12 +2,12 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Contracts</title>
+    <title>Add Contracts</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
 
 </head>
 <div id="wrapperH1">
-    <h1 id="h1"> Nordic Motor home Rental</h1>
+    <h1 id="h1"> Nordic Motorhome Rental</h1>
 </div>
 
 <body background="/background.jpg">
@@ -20,46 +20,68 @@
     <li><a href="/Repair" accesskey="r">Repairs</a></li>
     <li><a href="/Employee" accesskey="e">Employees</a> </li>
 </ul>
+<form th:action="@{'/AddContract/'+${motorhome.motorHomeID}}" method="post">
+<table id="tableMid">
 
-<div id="tableMid">
-    <form th:action="@{'/AddContract/'+${motorhome.motorHomeID}}" method="post">
-        <label style="font-size: 20px"> Enter employeeID</label>
-        <input type="text" name="employeeID" placeholder="Employee ID">
-        <br/>
-        <label style="font-size: 20px"> Enter customer ID </label>
-        <input type="text" name="customerID" placeholder="Customer ID" style="position: relative; left: 4px">
-        <br/>
-        <label style="font-size: 20px"> Enter motor home ID</label>
-        <input type="text" name="motorHomeID" th:value="${motorhome.motorHomeID}" readonly >
-        <br/>
-        <label style="font-size: 20px"> Enter extra equipment</label>
-        <input type="text" name="extraEquipment" placeholder="Extra equipment">
-        <br/>
-        <label style="font-size: 20px"> Enter distance to pick up location from NMR office **</label>
-        <input type="text" name="pickUpKM" placeholder="Ex. 20" >
-        <br/>
-        <label style="font-size: 20px"> Enter distance from drop off location to NMR office **</label>
-        <input type="text" name="dropOffKM" placeholder="Ex. 20">
-        <br/>
-        <label style="font-size: 20px"> Enter start date</label>
-        <input type="Date" pattern="yyyy-MM-dd" name="startDate" placeholder="Start date">
-        <br/>
-        <label style="font-size: 20px"> Enter end date</label>
-        <input type="Date" pattern="yyyy-MM-dd" name="endDate" placeholder="End date">
-        <br/>
-        <br/>
-        <label style="font-size: 20px"> low season</label>
+
+        <tr>
+            <td><label style="font-size: 20px"> Enter employeeID</label></td>
+            <td><input type="text" name="employeeID" placeholder="Employee ID"></td>
+        </tr>
+
+        <tr>
+            <td><label style="font-size: 20px"> Enter customer ID </label></td>
+            <td><input type="text" name="customerID" placeholder="Customer ID"></td>
+        </tr>
+
+        <tr>
+            <td><label style="font-size: 20px"> Enter motorhome ID</label></td>
+            <td><input type="text" name="motorHomeID" th:value="${motorhome.motorHomeID}" readonly ></td>
+        </tr>
+
+        <tr>
+            <td><label style="font-size: 20px"> Enter the quantity of extra equipment</label></td>
+            <td><input type="text" name="extraEquipment" placeholder="Extra equipment"></td>
+        </tr>
+
+        <tr>
+            <td><label style="font-size: 20px"> Enter distance to pick up location from NMR office*</label></td>
+            <td><input type="text" name="pickUpKM" placeholder="Ex. 20" ></td>
+        </tr>
+
+        <tr>
+            <td><label style="font-size: 20px"> Enter distance from drop off location to NMR office*</label></td>
+            <td><input type="text" name="dropOffKM" placeholder="Ex. 20"></td>
+        </tr>
+
+        <tr>
+            <td><label style="font-size: 20px"> Enter start date</label></td>
+            <td><input type="Date" pattern="yyyy-MM-dd" name="startDate" placeholder="Start date"></td>
+        </tr>
+
+        <tr>
+            <td><label style="font-size: 20px"> Enter end date</label></td>
+            <td><input type="Date" pattern="yyyy-MM-dd" name="endDate" placeholder="End date"></td>
+        </tr>
+
+        <tr>
+            <td><label style="font-size: 20px">Choose the season</label></td>
+            <td><label style="font-size: 20px"> low season</label>
         <input type="radio" name="season" value="0">
         <label style="font-size: 20px"> middle season</label>
         <input type="radio" name="season" value="1">
         <label style="font-size: 20px"> peak season</label>
-        <input type="radio" name="season" value="2">
-        <br/>
-        <input type="submit" value="Add new contract" onclick="alert('You have successfully added a new contract!')">
-    </form>
-</div>
+        <input type="radio" name="season" value="2"></td>
 
-<p> ** Please enter in KM how far from our pick up location, you wish to pick up or drop off your motor home. </p>
+        </tr>
+        <br/>
+</table>
+        <input type="submit" value="Add new contract" style="position: relative; left: 25%" onclick="alert('You have successfully added a new contract!')">
+    </form>
+<p>* Please enter how far * </p>
+<p> from our rental office you wish to pick up</p>
+<p> or drop off your motor home in kilometers. </p>
+
 
 </body>
 </html>

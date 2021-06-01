@@ -18,8 +18,8 @@ public class RepairService {
         return repairRepo.showRepairList();
     }
 
-    public Repair createRepair(Repair repair) {
-        return repairRepo.createRepair(repair);
+    public Repair createRepair(int id, Repair repair) {
+        return repairRepo.createRepair(id, repair);
     }
 
     public Boolean deleteRepair(int id) {
@@ -30,7 +30,7 @@ public class RepairService {
 
     public Repair editRepair(int id, Repair repair){ return repairRepo.editRepair(id, repair); }
 
-    public MotorHome addRepairToMotorHome(int motorHomeID){
+    public Repair addRepairToMotorHome(int motorHomeID){
         return repairRepo.addRepairToMotorHome(motorHomeID);
     }
 
